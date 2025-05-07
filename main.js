@@ -18,7 +18,7 @@ class MainScene extends Phaser.Scene {
       callback: () => {
         this.spawnCharacter(); // キャラを生成する
       },
-      repeat: -1
+      repeat: 49
     });
 
     // キャラと地面の衝突設定（ここで1回だけ）
