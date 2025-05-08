@@ -80,9 +80,9 @@ class MainScene extends Phaser.Scene {
 
     // 爆破モードボタン
     this.explodeButton = this.add.text(420, 20, '💣 ばくはつ', {
-      fontSize: '20px',
+      fontSize: '30px',
       backgroundColor: '#ff4444',
-      padding: { x: 10, y: 5 }
+      padding: { x: 15, y: 15 }
     })
     .setInteractive()
     .on('pointerdown', () => {
@@ -93,9 +93,9 @@ class MainScene extends Phaser.Scene {
 
     // 建設モードボタン
     this.buildButton = this.add.text(650, 20, '🪜 かいだん', {
-      fontSize: '20px',
+      fontSize: '30px',
       backgroundColor: '#8888ff',
-      padding: { x: 10, y: 5 }
+      padding: { x: 15, y: 15 }
     })
     .setInteractive()
     .on('pointerdown', () => {
