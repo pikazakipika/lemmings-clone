@@ -173,7 +173,9 @@ class MainScene extends Phaser.Scene {
 
   update() {
     this.characters.getChildren().forEach((char) => {
-      char.setVelocityX(char.speed * char.direction* 100);
+      if (!char.active) return; // Skip destroyed characters
+
+      char.setVelocityX(char.speed * char.direction * 100);
 
       // 階段を作る処理（ビルダーのみ）
       if (char.isBuilder) {
@@ -191,11 +193,11 @@ class MainScene extends Phaser.Scene {
 
           char.lastStairTime = now;
         }
-      }
-      else {
+      } else {
         // ビルダーを少し上に移動して階段を登るように見せる
         char.y -= 2.6;
       }
+
       // キャラが階段の上にいれば、落下しない
       let onStair = false;
       this.stairs.getChildren().forEach((stair) => {
